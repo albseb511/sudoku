@@ -1,4 +1,4 @@
-#SUDOKU GAME MADE WITH JAVASCRIPT
+# SUDOKU GAME MADE WITH JAVASCRIPT
 
 The challenge was to follow a Unix philosophy to make a game.
 
@@ -24,5 +24,4 @@ The challenge was to follow a Unix philosophy to make a game.
 ```
 1. Solution check needs to be edited. The output needs to be checked. 
 2. Grid error on column 7-9 needs to be checked again.
-3. 
 ```
