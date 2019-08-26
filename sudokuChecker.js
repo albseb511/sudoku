@@ -4,10 +4,10 @@
 function Hor(pos){
     var err = false
     let row = Math.ceil(pos/9)
-    console.log('Row error check, row',row)
+    // console.log('Row error check, row',row)
     let horCheck = false
     for(let i=0;i<9;i++){
-        console.log('val',sudoku[pos-1],sudoku[i+(row-1)*9],err,i+(row-1)*9)
+        // console.log('val',sudoku[pos-1],sudoku[i+(row-1)*9],err,i+(row-1)*9)
         if(sudoku[pos-1]===sudoku[i+(row-1)*9])
             if(horCheck===true)
                 err=true
@@ -15,11 +15,11 @@ function Hor(pos){
                 horCheck=!horCheck
     }
     if(err){   
-        console.log('error in Row',row)
-        return false
+        // console.log('error in Row',row)
+        return pos
         }
     else
-        return true
+        return 0
     
 }
 
@@ -40,10 +40,10 @@ function Ver(pos){
     }
     if(err){   
         // console.log('error in column',col)
-        return false
+        return pos
         }
     else
-        return true
+        return 0
     
 }
 
@@ -64,10 +64,10 @@ function GridCheck(rowMin,colMin,grid,row,col,pos){
     }
     if(err){   
         // console.log('error in grid',grid)
-        return false
+        return pos
         }
     else
-        return true
+        return 0
     
 }
 
@@ -119,3 +119,40 @@ function Grid(pos){
         
 }
 
+// Need to seperate this
+
+function GridPos(pos){
+    
+    let row = Math.ceil(pos/9)
+    let col = pos%9
+    var grid
+    if(row>0&&row<4&&col>0&&col<4){
+        return grid=1
+    }
+    if(row>3&&row<7&&col>0&&col<4){
+        return  grid=4
+    }
+    if(row>6&&row<10&&col>0&&col<4){
+        return grid=7
+    }
+    if(row>0&&row<4&&col>3&&col<7){
+        return grid=2
+    }
+    if(row>3&&row<7&&col>3&&col<7){
+        return grid=5
+    }
+    if(row>6&&row<10&&col>3&&col<7){
+        return grid=8
+    }
+    if(row>0&&row<4&&col>6&&col<10){
+        return grid=3
+    }
+    if(row>3&&row<7&&col>6&&col<10){
+        return grid=6
+    }
+    if(row>6&&row<10&&col>6&&col<10){
+        return grid=9
+    }
+    // console.log('item is in grid',grid,'row',row,'col',col)
+        
+}
