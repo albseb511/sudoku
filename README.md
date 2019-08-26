@@ -10,6 +10,12 @@ The challenge was to follow a Unix philosophy to make a game.
 4. A final check allows user to see if the sudoku is correct or not.
 ```
 
+## Tech
+```
+Javascript
+HTML - CSS Grids
+```
+
 ![Image](https://i.imgur.com/GZvTAxB.png)
 
 ### TO DO

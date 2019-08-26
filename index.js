@@ -32,7 +32,9 @@ function boxClick(i){
 
 function onFinalCheck(){
     let sumh=0, sumv=0, sumG=0;
-
+    let err = false
+    let v =0
+    
     if(sudoku.reduce((a,b)=>a+b)===405)
         return 0
     
@@ -46,11 +48,16 @@ function onFinalCheck(){
             sumG+=parseInt(grid)?grid:0;
         }
         if(sumh!=45||sumv!=45||sumG!=45)
-            return 0
-        sumG=sumh=sumv=0
+            v++
         console.log(sumh,sumv,sumG)
+        sumG=sumh=sumv=0
+        
     }
 
     // All conditions met, hence final check is true
+    if(v===0)
+        document.getElementById('ans').textContent='ANSWER IS CORRECT'
+    else
+        document.getElementById('ans').textContent='ANSWER IS WRONG'
     return 1
 }
